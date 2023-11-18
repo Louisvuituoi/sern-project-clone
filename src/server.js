@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 //import hàm
 import viewEngine from "./config/viewEngine";
 import initWebRoutes from "./route/web";
+import connectDB from "./config/connectDB";
 // enable process.env
 require('dotenv').config();
 
@@ -19,6 +20,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 viewEngine(app); //app = instance of express
 initWebRoutes(app);
+
+connectDB();
 
 let port = process.env.PORT || 6969;
 //if port === undefined => port = 6969

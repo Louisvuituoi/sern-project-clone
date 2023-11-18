@@ -1,5 +1,6 @@
 'use strict';
-
+// enable process.env khi import thu vien dotenv
+require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
