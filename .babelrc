@@ -1,0 +1,6 @@
+// câu lệnh cấu hình Compiler
+{
+    "presets": [
+        "@babel/preset-env"
+    ]
+}

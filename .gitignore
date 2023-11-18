@@ -1,0 +1,7 @@
+/node_modules
+#(laravel) chứa thư mục gốc
+/vendor
+#chứa cache
+/.idea
+.idea/
+.env
