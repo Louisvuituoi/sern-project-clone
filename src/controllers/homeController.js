@@ -1,5 +1,6 @@
-//trong file index.js da import tat ac model roi
+//trong file index.js da import tat ca model roi
 import db from '../models/index';
+import CRUDService from '../services/CRUDService';
 
 //hàm getHomePage trả ra nội dung trong ""
 // let getHomePage = (req, res) => {
@@ -24,6 +25,16 @@ let getHomePage = async (req, res) => {
 let getAboutPage = (req, res) => {
     return res.render('./test/about.ejs')
 }
+let getCRUD = (req, res) => {
+    return res.render('crud.ejs');
+}
+
+//vi viec tao nguoi dung ton time -> su dung sync
+let postCRUD = async (req, res) => {
+    let message = await CRUDService.createNewUser(req.body);
+    console.log(message);
+    return res.send('post crud from server');
+}
 
 //-----------------------------------
 //export các objects để các page khác dùng được chung
@@ -34,4 +45,6 @@ let getAboutPage = (req, res) => {
 module.exports = {
     getHomePage: getHomePage,
     getAboutPage: getAboutPage,
+    getCRUD: getCRUD,
+    postCRUD: postCRUD,
 }

@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     };
     Clinic.init({
         //trong model không cần khai báo primarykey (id)
+        name: DataTypes.STRING,
         address: DataTypes.STRING,
         description: DataTypes.TEXT,
         image: DataTypes.STRING

@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     };
     Specialty.init({
+        name: DataTypes.STRING,
         //trong model không cần khai báo primarykey (id)
         description: DataTypes.TEXT,
         image: DataTypes.STRING
